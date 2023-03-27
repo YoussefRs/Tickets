@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const PORT = 5000;
 const { connectDB } = require('./configDB/db');
 const userRouter  = require("./routes/userRouter")
+const ticketRouter = require('./routes/ticketRouter')
 
 // connect to db 
 connectDB();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended : true}));
 
 //Routes
 app.use('/api/users', userRouter)
+app.use('/api/tickets', ticketRouter)
 
 
 
