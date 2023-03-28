@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaQuestionCircle, FaTicketAlt } from 'react-icons/fa'
+import Products from '../components/Products'
 
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
             <FaQuestionCircle /> View My Tickets
         </Link>
       </main>
+      <Products />
     </>
   )
 }
