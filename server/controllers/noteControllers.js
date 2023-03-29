@@ -9,14 +9,13 @@ const Ticket = require('../models/tickets');
 const getNotes = asyncHandler(async (req, res) => {
     // Get user using the id in the JWT
     const user = await User.findById(req.user.id)
-  
     if (!user) {
       res.status(401)
       throw new Error('User not found')
     }
   
     const ticket = await Ticket.findById(req.params.ticketId)
-  
+    
     if (ticket.user.toString() !== req.user.id) {
       res.status(401)
       throw new Error('User not authorized')
@@ -33,7 +32,7 @@ const getNotes = asyncHandler(async (req, res) => {
 const addNote = asyncHandler(async (req, res) => {
     // Get user using the id in the JWT
     const user = await User.findById(req.user.id)
-  
+    console.log(user)
     if (!user) {
       res.status(401)
       throw new Error('User not found')
