@@ -16,7 +16,7 @@ function ProductCard({name, path, value, description}) {
         <p>{description}</p>
         <Link to='/'>
           <div className='price'>
-            <span>DT {value} <BiPurchaseTag /></span>
+            <span> {value} <BiPurchaseTag /></span>
           </div>
         </Link>
       </div>
